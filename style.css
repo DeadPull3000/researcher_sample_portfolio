@@ -16,8 +16,37 @@
     box-sizing: border-box;
 }
 
+/* Custom Scrollbar support for Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(17, 17, 17, 0.15) transparent;
+}
+
 body {
     font-family: var(--font-body);
+}
+
+/* Custom Scrollbar for Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+    width: 6px; /* Ultra-thin vertical scrollbar */
+    height: 6px; /* Ultra-thin horizontal scrollbar */
+}
+
+/* The background track of the scrollbar (blends into the white canvas) */
+::-webkit-scrollbar-track {
+    background: var(--bg-right); 
+}
+
+/* The draggable handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(17, 17, 17, 0.15); /* Soft, subtle gray handle */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+/* Hover state: Turns electric blue to match your interactive theme */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-blue); 
 }
 
 /* Desktop CSS Layout (Split-Screen Mechanics) */
