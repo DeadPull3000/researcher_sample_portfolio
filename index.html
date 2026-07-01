@@ -14,13 +14,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="mobile-header">
-        <span class="mobile-logo">SIDDHANT RITWICK</span>
-        <button class="hamburger-btn" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-    </header>
     <div class="split-layout">
         <nav class="left-panel">
             <div class="profile-image-container">
@@ -31,13 +24,18 @@
                 <p class="subtitle">Doctoral Researcher, Aalto University</p>
             </div>
             
-            <ul class="nav-menu">
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#research">Research & Publications</a></li>
-                <li><a href="#experience">Experience & Accolades</a></li>
-                <li><a href="#insights">Insights (Blog/Videos)</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-container">
+                <button class="menu-toggle" onclick="toggleMobileMenu()">
+                    <span class="hamburger">☰</span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#research">Research & Publications</a></li>
+                    <li><a href="#experience">Experience & Accolades</a></li>
+                    <li><a href="#insights">Insights (Blog/Videos)</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
             
             <div class="left-footer">
                 <div class="quick-links">
@@ -244,19 +242,19 @@
 
     function toggleMobileMenu() {
         const menu = document.querySelector('.nav-menu');
-        const hamburger = document.querySelector('.hamburger-btn');
+        const toggleBtn = document.querySelector('.menu-toggle');
         menu.classList.toggle('open');
-        hamburger.classList.toggle('active');
+        toggleBtn.classList.toggle('active');
     }
 
-    // Auto-closes the overlay menu when a link is clicked
+    // Auto-closes the dropdown when a link is clicked
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             const menu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger-btn');
+            const toggleBtn = document.querySelector('.menu-toggle');
             if (menu.classList.contains('open')) {
                 menu.classList.remove('open');
-                hamburger.classList.remove('active');
+                toggleBtn.classList.remove('active');
             }
         });
     });

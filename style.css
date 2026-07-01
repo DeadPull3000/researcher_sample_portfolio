@@ -117,8 +117,8 @@ body {
 }
 
 /* Navigation */
-/* Hide mobile header on desktop screens */
-.mobile-header {
+/* Hide the dropdown toggle on desktop screens */
+.menu-toggle {
     display: none;
 }
 
@@ -682,9 +682,82 @@ body {
         top: 14rem;
     }
 
-    /* Tighten left panel navigation padding to match the shifted circle */
+    /* Move the nav container to the top right */
+    .nav-container {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-bottom: 0;
+        z-index: 1000;
+    }
+
+    /* Style the custom Hamburger Toggle Button */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        background: var(--bg-left); /* Match navy panel */
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--text-left);
+        font-size: 1.5rem;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-toggle:hover, .menu-toggle.active {
+        border-color: var(--accent-blue);
+        color: var(--accent-blue);
+    }
+
+    /* Style the Dropdown Menu list */
     .nav-menu {
-        padding-right: 7.5rem;
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        width: 240px;
+        background: var(--bg-left); 
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+        position: absolute;
+        top: 100%; 
+        right: 0; /* Align dropdown to the right edge */
+        z-index: 99;
+        gap: 0;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        padding: 0.75rem 1.2rem;
+        font-size: 0.95rem;
+        text-align: left;
+        border-left: none !important;
+        border-bottom: none !important;
+        display: block;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        background: rgba(0, 71, 255, 0.15);
+        color: var(--accent-blue);
     }
 
     /* Reclaim space on the right panel */
@@ -703,70 +776,12 @@ body {
    Completely stacks the layout vertically.
    ========================================== */
 @media (max-width: 768px) {
-    /* Adjust body to accommodate fixed mobile header */
+    /* Stack the layout vertically */
     .split-layout {
-        margin-top: 60px; /* Pushes content down so it doesn't hide behind the fixed header */
-    }
-
-    /* Fixed Mobile Header Bar */
-    .mobile-header {
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background: rgba(10, 25, 47, 0.96); /* Matches your deep navy theme */
-        backdrop-filter: blur(10px); /* Premium frosted glass effect */
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1.5rem;
-        z-index: 1000;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    /* Mobile Brand Logo Text */
-    .mobile-logo {
-        font-family: var(--font-heading);
-        font-size: 0.95rem;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        color: var(--text-left);
-        text-transform: uppercase;
-    }
-
-    /* Minimalist 2-Bar Hamburger Trigger */
-    .hamburger-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: flex;
         flex-direction: column;
-        gap: 6px;
-        padding: 8px;
-        z-index: 1001; /* Keeps button above the menu when open */
     }
 
-    .hamburger-btn .bar {
-        display: block;
-        width: 22px;
-        height: 2px;
-        background-color: var(--text-left);
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* Hamburger to 'X' Animation on click */
-    .hamburger-btn.active .bar:nth-child(1) {
-        transform: translateY(4px) rotate(45deg);
-        background-color: var(--accent-blue);
-    }
-
-    .hamburger-btn.active .bar:nth-child(2) {
-        transform: translateY(-4px) rotate(-45deg);
-        background-color: var(--accent-blue);
-    }
-
-    /* Left Panel Content Resets on Mobile */
+    /* Left Panel: Becomes a top header area, centered */
     .left-panel {
         width: 100%;
         height: auto;
@@ -776,7 +791,7 @@ body {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        overflow: hidden !important;
+        overflow: hidden !important; /* Critical: prevents the negative desktop offset from creating horizontal scrolling on phones */
     }
 
     /* Profile Image: Centers beautifully at the top of the mobile screen */
@@ -795,51 +810,7 @@ body {
         margin-bottom: 2rem;
     }
 
-    /* Full-Screen Overlay Mobile Menu */
-    .nav-menu {
-        display: none; /* Controlled by JS */
-        position: fixed;
-        top: 60px; /* Sits directly below mobile header */
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 60px);
-        background: rgba(10, 25, 47, 0.98); /* Deep navy card */
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        z-index: 999;
-        margin: 0;
-        padding: 0;
-    }
 
-    /* Open State for Overlay Menu */
-    .nav-menu.open {
-        display: flex;
-    }
-
-    .nav-menu li {
-        width: auto;
-    }
-
-    /* Elegant, centered full-screen links */
-    .nav-menu a {
-        font-family: var(--font-heading);
-        font-size: 1.5rem; /* Larger, dramatic size */
-        font-weight: 600;
-        color: var(--text-left);
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border-left: none !important;
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s ease;
-    }
-
-    .nav-menu a:hover,
-    .nav-menu a.active {
-        color: var(--accent-blue);
-        border-bottom: 2px solid var(--accent-blue);
-    }
 
     /* Left Panel Footer: Centers social links on mobile */
     .left-footer {
