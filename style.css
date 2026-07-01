@@ -703,24 +703,30 @@ body {
         width: 45px;
         height: 45px;
         padding: 0;
-        background: var(--bg-left); /* Match navy panel */
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: transparent; 
+        border: none;
         color: var(--text-left);
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         cursor: pointer;
-        border-radius: 4px;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .menu-toggle:hover, .menu-toggle.active {
-        border-color: var(--accent-blue);
+    .hamburger {
+        display: inline-block;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .menu-toggle:hover, .menu-toggle.active, .nav-container:hover .menu-toggle {
         color: var(--accent-blue);
+    }
+
+    .nav-container:hover .hamburger, .menu-toggle.active .hamburger {
+        transform: rotate(90deg);
     }
 
     /* Style the Dropdown Menu list */
     .nav-menu {
-        display: none; /* Hidden by default */
+        display: flex; 
         flex-direction: column;
         width: 240px;
         background: var(--bg-left); 
@@ -731,13 +737,22 @@ body {
         margin-top: 0.5rem;
         position: absolute;
         top: 100%; 
-        right: 0; /* Align dropdown to the right edge */
+        right: 0; 
         z-index: 99;
         gap: 0;
+        
+        /* Smooth dropdown animation */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    .nav-container:hover .nav-menu,
     .nav-menu.open {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .nav-menu li {
