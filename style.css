@@ -44,16 +44,16 @@ body {
     width: 65%;
     background-color: var(--bg-right);
     color: var(--text-right);
-    padding: 4rem 10%;
+    padding: 4rem 8% 4rem 11rem; /* Generous 11rem left padding to completely clear the circle */
 }
 
 /* Identity */
 .profile-image-container {
     position: absolute;
-    top: 4rem; 
-    right: -80px; /* Perfectly centers a 160px circle on the dividing line */
-    width: 160px;
-    height: 160px;
+    top: 14rem; /* Lowers the circle to overlap the navigation area */
+    right: -140px; /* Centers the 280px circle exactly on the dividing line */
+    width: 280px;
+    height: 280px;
     z-index: 10;
 }
 
@@ -70,7 +70,7 @@ body {
 }
 
 .identity {
-    padding-right: 5.5rem; /* Prevents name and subtitle from colliding with the larger image */
+    padding-right: 0;
 }
 
 .identity h1 {
@@ -91,6 +91,7 @@ body {
 .nav-menu {
     list-style: none;
     padding: 0;
+    padding-right: 9rem; /* Prevents navigation links from sliding under the circle */
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
