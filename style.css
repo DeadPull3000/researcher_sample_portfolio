@@ -110,7 +110,8 @@ body {
 }
 
 /* Hover state: Displays a bright blue accent line to the left of the item */
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu a.active {
     color: var(--accent-blue);
     border-left: 2px solid var(--accent-blue);
     padding-left: 12px;
@@ -222,16 +223,17 @@ body {
 }
 
 .pub-card {
-    border: 1px solid rgba(17, 17, 17, 0.1);
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
     padding: 2rem;
     background: var(--bg-right);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .pub-card:hover {
     border-color: var(--accent-blue);
-    box-shadow: 0 4px 20px rgba(0, 71, 255, 0.05);
-    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 71, 255, 0.06);
+    transform: translateY(-4px);
 }
 
 .pub-tag {
@@ -420,11 +422,12 @@ body {
 }
 
 .media-card {
-    border: 1px solid rgba(17, 17, 17, 0.1);
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
     background: var(--bg-right);
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     overflow: hidden;
     height: 100%;
@@ -432,8 +435,8 @@ body {
 
 .media-card:hover {
     border-color: var(--accent-blue);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 71, 255, 0.08);
+    box-shadow: 0 12px 30px rgba(0, 71, 255, 0.06);
+    transform: translateY(-4px);
 }
 
 .video-thumbnail {
@@ -568,9 +571,10 @@ body {
     border-radius: 4px;
 }
 
-.form-group input:focus, .form-group textarea:focus {
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 0 3px rgba(0, 71, 255, 0.1);
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: rgba(17, 17, 17, 0.7);
+    box-shadow: none; /* Removes default browser glow */
 }
 
 .btn-submit {
