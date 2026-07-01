@@ -664,21 +664,126 @@ body {
     font-style: italic;
 }
 
-/* Mobile CSS Layout */
+/* ==========================================
+   1. TABLET LAYOUT (Max-width: 1024px)
+   Keeps the split-screen but scales down elements to fit smaller screens.
+   ========================================== */
+@media (max-width: 1024px) {
+    /* Scale down the overlapping circle and adjust its alignment */
+    .profile-image-container {
+        width: 200px;
+        height: 200px;
+        right: -100px; /* Half of 200px */
+        top: 14rem;
+    }
+
+    /* Tighten left panel navigation padding to match the shifted circle */
+    .nav-menu {
+        padding-right: 7.5rem;
+    }
+
+    /* Reclaim space on the right panel */
+    .right-panel {
+        padding: 4rem 6% 4rem 7.5rem;
+    }
+
+    /* Scale down headers slightly */
+    #introduction h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* ==========================================
+   2. MOBILE LAYOUT (Max-width: 768px)
+   Completely stacks the layout vertically.
+   ========================================== */
 @media (max-width: 768px) {
+    /* Stack the layout vertically */
     .split-layout {
         flex-direction: column;
     }
-    
+
+    /* Left Panel: Becomes a top header area, centered */
     .left-panel {
         width: 100%;
         height: auto;
         position: relative;
-        padding: 2rem;
+        padding: 3rem 1.5rem 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        overflow: hidden !important; /* Critical: prevents the negative desktop offset from creating horizontal scrolling on phones */
     }
-    
+
+    /* Profile Image: Centers beautifully at the top of the mobile screen */
+    .profile-image-container {
+        position: relative;
+        top: 0;
+        right: 0; /* Resets desktop overlap offset */
+        margin: 0 auto 1.5rem auto;
+        width: 140px;
+        height: 140px;
+    }
+
+    /* Identity spacing resets */
+    .identity {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    /* Navigation: Transforms from a vertical list into a clean, horizontal wrapped tag-menu */
+    .nav-menu {
+        padding-right: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Adjust the navigation indicators on mobile to underline instead of left-border */
+    .nav-menu a {
+        font-size: 1rem;
+        border-left: none !important;
+        padding-left: 0 !important;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 2px;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        border-bottom: 2px solid var(--accent-blue);
+        color: var(--accent-blue);
+    }
+
+    /* Left Panel Footer: Centers social links on mobile */
+    .left-footer {
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    /* Right Panel: Reclaims the full width of the mobile phone screen */
     .right-panel {
         width: 100%;
-        padding: 2rem;
+        padding: 3rem 1.5rem; /* Removes the massive desktop left-paddings */
+    }
+
+    /* Section headings on mobile */
+    #introduction h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Slim down grid gaps slightly on mobile */
+    .media-grid {
+        grid-template-columns: 1fr; /* Force single column on narrow screens */
+        gap: 1.5rem;
     }
 }
