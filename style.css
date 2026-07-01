@@ -50,10 +50,10 @@ body {
 /* Identity */
 .profile-image-container {
     position: absolute;
-    top: 4rem; /* Aligns vertically with the top of your name */
-    right: -55px; /* Pushes a 110px circle exactly halfway over the 35% dividing line */
-    width: 110px;
-    height: 110px;
+    top: 4rem; 
+    right: -80px; /* Perfectly centers a 160px circle on the dividing line */
+    width: 160px;
+    height: 160px;
     z-index: 10;
 }
 
@@ -70,7 +70,7 @@ body {
 }
 
 .identity {
-    padding-right: 3rem;
+    padding-right: 5.5rem; /* Prevents name and subtitle from colliding with the larger image */
 }
 
 .identity h1 {
