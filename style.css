@@ -44,14 +44,14 @@ body {
     width: 65%;
     background-color: var(--bg-right);
     color: var(--text-right);
-    padding: 4rem 8% 4rem 11rem; /* Generous 11rem left padding to completely clear the circle */
+    padding: 4rem 8% 4rem 8.5rem; /* Reclaimed space by reducing left padding to 8.5rem */
 }
 
 /* Identity */
 .profile-image-container {
     position: absolute;
-    top: 14rem; /* Lowers the circle to overlap the navigation area */
-    right: -140px; /* Centers the 280px circle exactly on the dividing line */
+    top: 14rem; 
+    right: -90px; /* Shifts the circle further left into the navy panel */
     width: 280px;
     height: 280px;
     z-index: 10;
@@ -91,7 +91,7 @@ body {
 .nav-menu {
     list-style: none;
     padding: 0;
-    padding-right: 9rem; /* Prevents navigation links from sliding under the circle */
+    padding-right: 11.5rem; /* Pushes the menu items safely to the left */
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
