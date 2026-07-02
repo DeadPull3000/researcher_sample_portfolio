@@ -969,8 +969,8 @@ body {
 .archive-table {
     display: flex;
     flex-direction: column;
-    border-top: 2px solid var(--text-right);
-    margin-top: 2rem;
+    border-top: none; /* Completely removes the redundant duplicate top line */
+    margin-top: 1rem; /* Brings the list closer to the clean header border */
 }
 .archive-row {
     display: grid;
@@ -1290,7 +1290,8 @@ body:has(.archive-index) .split-layout {
     .archive-table {
         width: 100%;
         overflow: hidden;
-        border-top: none; /* Merged into stacked headers */
+        border-top: none !important; /* Forces removal on mobile as well */
+        margin-top: 1rem !important;
     }
 
     /* 3. Disable horizontal jumping shifts on mobile tap */
