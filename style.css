@@ -1237,3 +1237,13 @@ details.abstract-accordion summary ~ * {
     line-height: 1.6;
     color: rgba(17, 17, 17, 0.75);
 }
+
+/* Permanently hide stray mobile brand text on all devices */
+.mobile-logo {
+    display: none !important;
+}
+
+/* Ensure no extra top spacing exists on the blog page */
+body:has(.archive-index) .split-layout {
+    margin-top: 0 !important;
+}
