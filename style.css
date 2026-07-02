@@ -548,27 +548,24 @@ body {
 }
 
 .read-more {
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-right);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    transition: color 0.3s ease;
-    margin-top: auto;
+    color: var(--text-right);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.arrow {
-    transition: transform 0.3s ease;
+.read-more .arrow {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.blog-card:hover .read-more {
+.read-more:hover {
     color: var(--accent-blue);
 }
-
-.blog-card:hover .arrow {
-    transform: translateX(5px);
+.read-more:hover .arrow {
+    transform: translateX(6px);
 }
 
 /* Contact & Beyond the Desk Section */
@@ -1119,4 +1116,24 @@ body {
     line-height: 1.8;
     color: rgba(17, 17, 17, 0.75);
     margin-bottom: 1.5rem;
+}
+
+@media (min-width: 769px) {
+    .mobile-header {
+        display: none !important;
+    }
+}
+
+details.abstract-accordion summary ~ * {
+    animation: smoothExpand 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes smoothExpand {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
