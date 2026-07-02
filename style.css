@@ -5,8 +5,8 @@
     --text-left: #FFFFFF;
     --text-right: #111111;
     --accent-blue: #0047FF;
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'EB Garamond', serif;
+    --font-body: 'Avenir Next', 'Avenir', 'Nunito Sans', sans-serif; /* Native on Mac/iOS, beautiful Google Font fallback on Windows/Android */
 }
 
 /* CSS Reset */
@@ -24,6 +24,8 @@ html {
 
 body {
     font-family: var(--font-body);
+    font-weight: 400; /* Set a crisp, readable weight */
+    letter-spacing: 0.1px; /* Subtle spacing adjustment for Avenir geometric shapes */
 }
 
 /* Custom Scrollbar for Chrome, Safari, and Edge */
@@ -274,7 +276,7 @@ body {
     font-family: var(--font-body);
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: rgba(17, 17, 17, 0.5);
     display: inline-block;
     margin-bottom: 1rem;
@@ -519,13 +521,13 @@ body {
 }
 
 .media-tag {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 0.75rem;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--accent-blue);
     margin-bottom: 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .media-card h3 {
@@ -650,9 +652,9 @@ body {
 }
 
 .score-pill {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     background: rgba(17, 17, 17, 0.05);
     padding: 0.5rem 1rem;
     border-radius: 20px;
