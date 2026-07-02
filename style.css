@@ -856,61 +856,42 @@ body {
     }
 }
 
-/* ==========================================
-   HOMEPAGE ARCHIVE BANNER
-   ========================================== */
-.archive-banner {
-    margin-top: 3.5rem;
+/* Right-aligned wrapper */
+.archive-link-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Aligns the button cleanly to the right corner */
+    margin-top: 2.5rem;
     width: 100%;
-    background: var(--bg-left); /* Dark Navy */
-    color: var(--text-left);
-    padding: 2.5rem 3rem;
-    border-radius: 6px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+}
+
+/* Minimalist Navy Text Button */
+.archive-text-btn {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--bg-left); /* Deep Navy Blue */
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-.archive-banner:hover {
-    border-color: var(--accent-blue);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0, 71, 255, 0.15);
-}
-.banner-sub {
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent-blue);
-    font-weight: 700;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-.banner-text h3 {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    margin: 0;
-    font-weight: 600;
-}
-.banner-action {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 600;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    color: var(--text-left);
+    gap: 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--bg-left);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.banner-arrow {
-    font-size: 1.4rem;
-    transition: transform 0.3s ease;
+
+/* Smooth Arrow Animation */
+.archive-text-btn .btn-arrow {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover State: Shifts to Electric Blue & Glides Right */
+.archive-text-btn:hover {
     color: var(--accent-blue);
+    border-bottom-color: var(--accent-blue);
 }
-.archive-banner:hover .banner-arrow {
-    transform: translateX(8px);
+
+.archive-text-btn:hover .btn-arrow {
+    transform: translateX(8px); /* Smoothly glides the arrow forward */
 }
 
 /* ==========================================
