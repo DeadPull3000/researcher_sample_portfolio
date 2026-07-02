@@ -3,104 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights & Essays | Siddhant Ritwick</title>
+    <title>Journal Archive | Siddhant Ritwick</title>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..600;1,6..12,300..600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Mobile Header Bar -->
+    <!-- Mobile Header -->
     <header class="mobile-header">
         <span class="mobile-logo">SIDDHANT RITWICK</span>
-        <a href="index.html" style="color:white; text-decoration:none; font-size: 0.9rem;">← Portfolio</a>
+        <a href="index.html" style="color:white; text-decoration:none; font-family:var(--font-body); font-size: 0.9rem;">← Portfolio</a>
     </header>
 
     <div class="split-layout">
-        <!-- Fixed Left Panel -->
+        
+        <!-- Fixed Left Panel: Scholarly Volume Index -->
         <nav class="left-panel">
             <div>
                 <a href="index.html" class="back-link">← Return to Portfolio</a>
                 <div class="identity">
-                    <h1>SIDDHANT RITWICK</h1>
-                    <p class="subtitle">Doctoral Researcher, Aalto University</p>
+                    <h1>ARCHIVE</h1>
+                    <p class="subtitle">Essays, Theoretical Drafts & Colloquia</p>
                 </div>
                 <p class="blog-left-desc">
-                    Long-form essays, working theoretical drafts, and multimedia presentations exploring layperson-expert tensions, epistemic polarization, and digital platform ethics.
+                    An indexed repository of long-form cultural criticism, empirical investigations, and video lectures exploring layperson-expert tensions in digital arenas.
                 </p>
-                <div style="margin-top: 2rem;">
-                    <p style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.8rem; color: white;">Topics</p>
-                    <ul class="topic-list">
-                        <li><a href="#" class="topic-pill active">All</a></li>
-                        <li><a href="#" class="topic-pill">Epistemic Authority</a></li>
-                        <li><a href="#" class="topic-pill">Digital Platforms</a></li>
-                        <li><a href="#" class="topic-pill">Popular Media</a></li>
-                        <li><a href="#" class="topic-pill">Video Talks</a></li>
-                    </ul>
-                </div>
+                
+                <!-- Sleek Interactive Vertical Index -->
+                <ul class="archive-index">
+                    <li><a href="#" class="active"><span>Complete Repository</span> <span class="archive-count">08</span></a></li>
+                    <li><a href="#"><span>Published Essays</span> <span class="archive-count">03</span></a></li>
+                    <li><a href="#"><span>Working Drafts</span> <span class="archive-count">03</span></a></li>
+                    <li><a href="#"><span>Video Colloquia</span> <span class="archive-count">02</span></a></li>
+                </ul>
             </div>
+            
             <div class="left-footer">
                 Google Scholar | LinkedIn | Email
             </div>
         </nav>
 
-        <!-- Scrollable Right Panel (Editorial Magazine Feed) -->
-        <main class="right-panel" style="padding-top: 5rem;">
+        <!-- Scrollable Right Panel: The Interactive Archive Rows -->
+        <main class="right-panel" style="padding-top: 4rem;">
             
-            <!-- Featured Hero Article -->
+            <!-- Hero Featured Piece -->
             <article class="featured-article">
-                <span class="featured-badge">Featured Essay</span>
-                <h2>Spiral of Suffering: When Knowledge Hurts</h2>
+                <span class="featured-badge">Spotlight Essay</span>
+                <h2 style="font-size: 3rem;">Spiral of Suffering: When Knowledge Hurts</h2>
                 <div class="article-meta">Commissioned at Aeon Magazine • 8 min read</div>
                 <p class="featured-excerpt">
-                    An exploration into how lay evaluation and unregulated digital information flows transform from empowering patient tools into mechanisms of epistemic polarization and psychological suffering.
+                    An exploration into how unregulated digital information flows and lay evaluation platforms transform from empowering patient tools into structural mechanisms of epistemic polarization and psychological suffering.
                 </p>
-                <a href="#" class="read-more" style="font-size: 1.1rem;">Read Full Essay <span class="arrow">→</span></a>
+                <a href="#" class="read-more" style="font-size: 1.15rem;">Read Full Essay <span class="arrow">→</span></a>
             </article>
 
-            <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Recent Articles & Talks</h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 3rem;">
+                <h3 class="section-title" style="margin: 0; font-size: 2.2rem;">Index of Writings & Media</h3>
+                <span style="font-family: var(--font-body); font-size: 0.85rem; color: rgba(17,17,17,0.5); text-transform: uppercase; letter-spacing: 1px;">Chronological</span>
+            </div>
 
-            <!-- Standard Grid Feed -->
-            <div class="media-grid">
+            <!-- Novel Interactive Rows Layout -->
+            <div class="archive-table">
                 
-                <article class="media-card blog-card">
-                    <div class="media-content">
-                        <span class="media-tag">Working Draft</span>
-                        <h3>From Paternalistic to Maternalistic Professionalism</h3>
-                        <p class="article-meta" style="margin-bottom: 0.8rem;">Preparing for ASQ • 12 min read</p>
-                        <p class="media-excerpt">Consequences of lay evaluation on digital platforms for traditional occupational hierarchies.</p>
-                        <span class="read-more">Read Abstract <span class="arrow">→</span></span>
+                <!-- Row 1 -->
+                <a href="#" class="archive-row">
+                    <span class="row-year">2026</span>
+                    <div class="row-title">
+                        <h4>From Paternalistic to Maternalistic Professionalism</h4>
+                        <span class="row-subtitle">Consequences of lay evaluation on digital platforms for established occupational hierarchies.</span>
                     </div>
-                </article>
+                    <span class="row-venue">Preparing for ASQ</span>
+                    <span class="row-icon">→</span>
+                </a>
 
-                <article class="media-card video-card">
-                    <div class="video-thumbnail"><div class="play-button"></div></div>
-                    <div class="media-content">
-                        <span class="media-tag">Video Colloquium</span>
-                        <h3>When Laypersons Claim to Know</h3>
-                        <p class="article-meta" style="margin-bottom: 0.8rem;">41st EGOS, Athens • 25 min watch</p>
-                        <p class="media-excerpt">Examining the epistemic dynamics of polarization in digital interaction arenas.</p>
+                <!-- Row 2 -->
+                <a href="#" class="archive-row">
+                    <span class="row-year">2025</span>
+                    <div class="row-title">
+                        <h4>When Laypersons Claim to Know: Epistemic Dynamics</h4>
+                        <span class="row-subtitle">Video presentation and symposium lecture on digital polarization.</span>
                     </div>
-                </article>
+                    <span class="row-venue">41st EGOS, Athens</span>
+                    <span class="row-icon">▶</span>
+                </a>
 
-                <article class="media-card blog-card">
-                    <div class="media-content">
-                        <span class="media-tag">Philosophy & Culture</span>
-                        <h3>On Going Beyond Structure and Agency</h3>
-                        <p class="article-meta" style="margin-bottom: 0.8rem;">Theoretical Notes • 5 min read</p>
-                        <p class="media-excerpt">Notes on luck, structural violence, and the philosophical frameworks governing lay knowledge claims.</p>
-                        <span class="read-more">Read Article <span class="arrow">→</span></span>
+                <!-- Row 3 -->
+                <a href="#" class="archive-row">
+                    <span class="row-year">2025</span>
+                    <div class="row-title">
+                        <h4>On Going Beyond Structure and Agency</h4>
+                        <span class="row-subtitle">Theoretical notes on luck, violence, and philosophical frameworks governing lay knowledge.</span>
                     </div>
-                </article>
+                    <span class="row-venue">Working Draft</span>
+                    <span class="row-icon">→</span>
+                </a>
 
-                <article class="media-card video-card">
-                    <div class="video-thumbnail"><div class="play-button"></div></div>
-                    <div class="media-content">
-                        <span class="media-tag">Conference Presenter</span>
-                        <h3>Professionals In Public Court</h3>
-                        <p class="article-meta" style="margin-bottom: 0.8rem;">AOM Chicago • 18 min watch</p>
-                        <p class="media-excerpt">How digital platform architectures empower weak clients to systematically influence established professionals.</p>
+                <!-- Row 4 -->
+                <a href="#" class="archive-row">
+                    <span class="row-year">2024</span>
+                    <div class="row-title">
+                        <h4>Professionals In Public Court</h4>
+                        <span class="row-subtitle">How digital platform architectures empower weak clients to systematically influence professionals.</span>
                     </div>
-                </article>
+                    <span class="row-venue">AOM Chicago</span>
+                    <span class="row-icon">▶</span>
+                </a>
+
+                <!-- Row 5 -->
+                <a href="#" class="archive-row">
+                    <span class="row-year">2024</span>
+                    <div class="row-title">
+                        <h4>On the Perils of Certain Epistemic Authorities</h4>
+                        <span class="row-subtitle">Conceptual examination of professional boundaries and digital contestation.</span>
+                    </div>
+                    <span class="row-venue">Research Notes</span>
+                    <span class="row-icon">→</span>
+                </a>
 
             </div>
 
