@@ -1247,3 +1247,67 @@ details.abstract-accordion summary ~ * {
 body:has(.archive-index) .split-layout {
     margin-top: 0 !important;
 }
+
+/* ==========================================
+   MOBILE ARCHIVE RESPONSIVE FIXES
+   ========================================== */
+/* Desktop default header wrapper */
+.archive-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3.5rem;
+    width: 100%;
+    border-bottom: 2px solid var(--text-right);
+    padding-bottom: 0.5rem;
+}
+
+/* Remove the redundant border bottom from the raw section-title inside headers */
+.archive-section-header .section-title {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+    /* 1. Stack colliding headers vertically on mobile */
+    .archive-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+        margin-top: 2.5rem;
+        border-bottom: 1px solid var(--text-right);
+    }
+    
+    /* 2. Force strict viewport boundaries on mobile to eliminate horizontal scrolling */
+    .right-panel {
+        width: 100% !important;
+        padding: 3rem 1.25rem !important; /* Tight, beautiful margin alignment */
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .archive-table {
+        width: 100%;
+        overflow: hidden;
+        border-top: none; /* Merged into stacked headers */
+    }
+
+    /* 3. Disable horizontal jumping shifts on mobile tap */
+    .archive-row {
+        padding: 1.25rem 0.5rem !important;
+        grid-template-columns: 1fr 30px !important;
+        box-sizing: border-box;
+    }
+    
+    .archive-row:hover {
+        padding-left: 0.5rem !important; /* Locks padding stable on mobile touch */
+        background: rgba(0, 71, 255, 0.03);
+        transform: none !important;
+    }
+    
+    .row-title h4 {
+        font-size: 1.15rem !important; /* Slightly cleaner for smaller mobile viewports */
+        line-height: 1.35;
+    }
+}
