@@ -65,10 +65,19 @@
                         <h3>"In the Eye of the Beholder: An Extension of Rintamäki, Parker, and Spicer’s ‘Institutional Parasites’"</h3>
                         <p class="pub-authors">Ritwick, S. (published online)</p>
                         <p class="pub-journal">Academy of Management Review</p>
-                        <details class="abstract-accordion">
-                            <summary>Read Abstract / Details</summary>
-                            <p>A conceptual extension examining the epistemic dynamics of layperson and professional interactions. [Link to paper coming soon]</p>
-                        </details>
+                        <!-- Trigger Button -->
+                        <button class="custom-accordion-trigger" onclick="toggleSmoothAccordion(this)">
+                            Read Abstract / Details <span class="acc-icon">+</span>
+                        </button>
+
+                        <!-- Smooth Grid Wrapper -->
+                        <div class="custom-accordion-wrapper">
+                            <div class="custom-accordion-inner">
+                                <div class="custom-accordion-content">
+                                    A conceptual extension examining the epistemic dynamics of layperson and professional interactions. Through empirical analysis, this paper investigates how authority is challenged and constructed in digital arenas.
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="pub-card">
@@ -268,6 +277,12 @@
             }
         });
     });
+
+    function toggleSmoothAccordion(button) {
+        button.classList.toggle('active');
+        const wrapper = button.nextElementSibling;
+        wrapper.classList.toggle('open');
+    }
     </script>
 </body>
 </html>
